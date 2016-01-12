@@ -7,6 +7,7 @@ module ProgressJob
         hash = {
           :progress_max => @delayed_job.progress_max,
           :progress_stage => @delayed_job.progress_stage,
+          :last_error => @delayed_job.last_error,
           :progress_current => @delayed_job.progress_current
         }
         hash[:percentage] = !hash[:progress_max].zero? ? hash[:progress_current] / hash[:progress_max].to_f * 100 : 0
